@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 import Header from '../component/Header';
+import AlbumArt from '../component/AlbumArt';
+import TrackDetails from '../component/TrackDetails';
 import Controls from '../component/Controls';
 import Video from 'react-native-video';
 
@@ -99,6 +100,8 @@ export default class Player extends Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         <Header onBackPress={() => this.props.navigation.pop()} />
+        <AlbumArt url={track.albumArtUrl} />
+        <TrackDetails title={track.title} artist={track.artist} />
         <Controls
           onPressRepeat={() => this.setState({repeatOn : !this.state.repeatOn})}
           repeatOn={this.state.repeatOn}
