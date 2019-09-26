@@ -22,7 +22,7 @@ console.disableYellowBox = true;
  */
 const HomeStackNavigator = StackNavigator({
     Home: {
-        screen: HomeScreen,
+        screen: Home,
         navigationOptions: {
             header: null,
 
@@ -42,7 +42,7 @@ const HomeStackNavigator = StackNavigator({
  *  TAB 2
  */
 const Tab2StackNavigator = StackNavigator({
-    Analytics: {
+    Tab2: {
         screen: Tab2,
         navigationOptions: {
             header: null
@@ -56,7 +56,7 @@ const Tab2StackNavigator = StackNavigator({
  * TAB 3
  */
 const Tab3StackNavigator = StackNavigator({
-    Notification: {
+    Tab3: {
         screen: Tab3,
         navigationOptions: {
             header: null
@@ -70,19 +70,13 @@ const Tab3StackNavigator = StackNavigator({
  * TAB 4
  */
 const Tab4StackNavigator = StackNavigator({
-    Profile: {
+    Tab4: {
         screen: Tab4,
         navigationOptions: {
             header: null
         },
         initialRouteName: "Tab4"
     },
-    Setting: {
-        screen: SettingScreen,
-        navigationOptions: {
-            header: null
-        }
-    }
 }
 );
 
@@ -122,9 +116,9 @@ const MainTapNavigator = TabNavigator({
         swipeEnable: false,
         animationEnabled: false,
         tabBarOptions: {
-            activeTintColor: "black",
-            inactiveTintColor: "white",
-            labelStyle: { fontSize: 15, width: width / 4 },
+            activeTintColor: "blue",
+            inactiveTintColor: "black",
+            labelStyle: { fontSize: 20, width: width / 4 },
             showIcon: "false",
             showLabel: "true",
             style: { backgroundColor: "white" },
