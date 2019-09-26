@@ -6,6 +6,7 @@ import {
 import Header from '../component/Header';
 import AlbumArt from '../component/AlbumArt';
 import TrackDetails from '../component/TrackDetails';
+import SeekBar from '../component/SeekBar';
 import Controls from '../component/Controls';
 import Video from 'react-native-video';
 
@@ -102,6 +103,11 @@ export default class Player extends Component {
         <Header onBackPress={() => this.props.navigation.pop()} />
         <AlbumArt url={track.albumArtUrl} />
         <TrackDetails title={track.title} artist={track.artist} />
+        <SeekBar
+          onSeek={this.seek.bind(this)}
+          trackLength={this.state.totalLength}
+          onSlidingStart={() => this.setState({paused: true})}
+          currentPosition={this.state.currentPosition} />
         <Controls
           onPressRepeat={() => this.setState({repeatOn : !this.state.repeatOn})}
           repeatOn={this.state.repeatOn}
